@@ -68,7 +68,7 @@ void PathPlaner::Iterate(double x0, double y0, double s0, double endS, double d0
     
     //Analize nearby trafic, choose best line and velocity
     double desiredV;
-    int line = this->AnalizeTrafic(otherCars, s, l, refYaw, prevSize, desiredV);
+    int line = this->AnalyzeTraffic(otherCars, s, l, refYaw, prevSize, desiredV);
     
     //Generate few waypoints in the shoosen line
     for (double i=_predictSpacing; i<_predictDist; i+=_predictSpacing) {
@@ -134,7 +134,7 @@ std::vector<double> & PathPlaner::NextY()
     return _nextY;
 }
 
-int PathPlaner::AnalizeTrafic(std::vector<std::vector<double> > otherCars, double carS, int carL, double yaw, int predictionLen, double &desiredV)
+int PathPlaner::AnalyzeTraffic(std::vector<std::vector<double> > otherCars, double carS, int carL, double yaw, int predictionLen, double &desiredV)
 {
     //This is protection for crossin any s-coordinate 0 value
     bool somebodyInLastQuarter = false;

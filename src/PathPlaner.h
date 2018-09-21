@@ -58,7 +58,7 @@ protected:
      *  @param[out] desiredV desired velocity in choosen line
      *  @return best line for current trafic conditions
      */
-    int AnalizeTrafic(std::vector<std::vector<double>> otherCars, double carS, int carL, double yaw, int predictionLen, double &desiredV);
+    int AnalyzeTraffic(std::vector<std::vector<double>> otherCars, double carS, int carL, double yaw, int predictionLen, double &desiredV);
     
     /** @brief Calculate distance between two points
      *  @param[in] x1 point 1 x coordinate
